@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
@@ -64,11 +63,11 @@ const Dashboard = () => {
             </div>
             <Progress 
               value={securityScore} 
-              className="mt-3 h-2"
-              indicatorClassName={cn(
-                securityScore > 80 ? "bg-security-low" : 
-                securityScore > 60 ? "bg-security-medium" : 
-                "bg-security-high"
+              className={cn(
+                "mt-3 h-2",
+                securityScore > 80 ? "bg-security-low/20 [&>div]:bg-security-low" : 
+                securityScore > 60 ? "bg-security-medium/20 [&>div]:bg-security-medium" : 
+                "bg-security-high/20 [&>div]:bg-security-high"
               )}
             />
           </CardContent>
